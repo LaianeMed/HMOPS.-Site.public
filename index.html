@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Municipal Dr. Oswaldo Prediliano Santana</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(8, 60, 129, 0.8), rgba(8, 60, 129, 0.6)), 
+                        url('https://images.unsplash.com/photo-1581056771107-24ca5f033842?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            min-height: 80vh;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+        
+        .flow-step {
+            position: relative;
+        }
+        
+        .flow-step:not(:last-child):after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 90%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 40px;
+            background-color: #083c81;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-blue-900 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold flex items-center">
+                <i class="fas fa-hospital mr-2"></i> HMOPS
+            </a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#home" class="hover:text-blue-200">Início</a>
+                <a href="#sobre" class="hover:text-blue-200">Sobre</a>
+                <a href="#servicos" class="hover:text-blue-200">Serviços</a>
+                <a href="#fluxo" class="hover:text-blue-200">Fluxo de Atendimento</a>
+                <a href="#contato" class="hover:text-blue-200">Contato</a>
+            </div>
+            <button class="md:hidden focus:outline-none" id="mobile-menu-button">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-blue-800 text-white py-2" id="mobile-menu">
+            <a href="#home" class="block px-4 py-2 hover:bg-blue-700">Início</a>
+            <a href="#sobre" class="block px-4 py-2 hover:bg-blue-700">Sobre</a>
+            <a href="#servicos" class="block px-4 py-2 hover:bg-blue-700">Serviços</a>
+            <a href="#fluxo" class="block px-4 py-2 hover:bg-blue-700">Fluxo de Atendimento</a>
+            <a href="#contato" class="block px-4 py-2 hover:bg-blue-700">Contato</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero flex items-center justify-center text-white">
+        <div class="container mx-auto px-4 text-center">
+            <div class="bg-white/30 px-8 py-6 rounded-lg backdrop-blur-sm mb-8">
+                <div class="text-center">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-2 drop-shadow-lg">Hospital Municipal<br>Dr. Oswaldo Prediliano Santana</h1>
+                    <p class="text-xl font-medium">Excelência em Saúde Pública 24h para a Região de Salinas</p>
+                </div>
+            </div>
+            <a href="#sobre" class="bg-white text-blue-900 font-bold px-8 py-3 rounded-full hover:bg-blue-200 transition duration-300 inline-block">Saiba Mais</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">Sobre Nós</h2>
+            
+            <div class="flex flex-col md:flex-row gap-8 items-center">
+                <div class="md:w-1/2">
+                    <div class="bg-blue-50 p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-semibold text-blue-900 mb-4">Nossa Missão</h3>
+                        <p class="text-gray-700 mb-6">Oferecer atendimento gratuito e universal de qualidade à população através do Sistema Único de Saúde (SUS), com compromisso humanizado e equidade no acesso aos serviços de saúde.</p>
+                        
+                        <h3 class="text-2xl font-semibold text-blue-900 mb-4">Cobertura</h3>
+                        <p class="text-gray-700 mb-6">Atendemos aproximadamente 241 mil usuários da microrregião de saúde Salinas-Taiobeiras, sendo referência em média e alta complexidade para 18 municípios.</p>
+                        
+                        <div class="flex items-center mt-4">
+                            <i class="fas fa-map-marker-alt text-blue-900 text-2xl mr-4"></i>
+                            <div>
+                                <p class="font-semibold">Endereço:</p>
+                                <p>Avenida Antônio Carlos, nº 1009, Bairro São Geraldo</p>
+                                <p>Salinas - MG, CEP 39560-000</p>
+                                <p class="mt-2 font-semibold">Vinculado à Prefeitura Municipal de Salinas</p>
+                                <p>Diretora Administrativa: Laiane Medeiros</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Hospital building" 
+                         class="w-full rounded-lg shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="py-16 bg-blue-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">Nossos Serviços</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="service-card bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <div class="text-blue-900 mb-4">
+                        <i class="fas fa-ambulance text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">UPA 24 Horas</h3>
+                    <p class="text-gray-700 mb-4">Atendimento de urgência e emergência com classificação de risco pelo Protocolo de Manchester. Salas vermelha (alto risco) e amarela (médio risco).</p>
+                    <div class="bg-blue-100 text-blue-900 px-3 py-1 rounded-full text-sm inline-block">Atendimento Imediato</div>
+                </div>
+                
+                <!-- Service Card 2 -->
+                <div class="service-card bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <div class="text-blue-900 mb-4">
+                        <i class="fas fa-procedures text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Internações</h3>
+                    <p class="text-gray-700 mb-4">42 leitos clínicos, 10 cirúrgicos, 10 pediátricos, 10 obstétricos, 10 leitos de UTI e 3 de saúde mental. Equipe multidisciplinar 24h com médicos, enfermeiros e técnicos.</p>
+                    <div class="bg-blue-100 text-blue-900 px-3 py-1 rounded-full text-sm inline-block">Acompanhamento Integral</div>
+                </div>
+                
+                <!-- Service Card 3 -->
+                <div class="service-card bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <div class="text-blue-900 mb-4">
+                        <i class="fas fa-baby text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Maternidade</h3>
+                    <p class="text-gray-700 mb-4">10 leitos obstétricos, partos humanizados, pré-natal de alto risco, atendimento ginecológico e aleitamento materno. Berçário e acompanhante.</p>
+                    <div class="bg-blue-100 text-blue-900 px-3 py-1 rounded-full text-sm inline-block">Humanização do Parto</div>
+                </div>
+                
+                <!-- Service Card 4 -->
+                <div class="service-card bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <div class="text-blue-900 mb-4">
+                        <i class="fas fa-flask text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Exames e Laboratório</h3>
+                    <p class="text-gray-700 mb-4">Laboratório 24h com exames clínicos. Serviços de imagem: raio-X, ultrassonografia, ECG e tomografia computadorizada.</p>
+                    <div class="bg-blue-100 text-blue-900 px-3 py-1 rounded-full text-sm inline-block">Resultados Ágeis</div>
+                </div>
+                
+                <!-- Service Card 5 -->
+                <div class="service-card bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <div class="text-blue-900 mb-4">
+                        <i class="fas fa-heart text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Especialidades</h3>
+                    <p class="text-gray-700 mb-4">Clínica médica, pediatria, cirurgia geral, fisioterapia, psicologia, nutrição e assistência social com atendimento ambulatorial.</p>
+                    <div class="bg-blue-100 text-blue-900 px-3 py-1 rounded-full text-sm inline-block">Atendimento Especializado</div>
+                </div>
+                
+                <!-- Service Card 6 -->
+                <div class="service-card bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <div class="text-blue-900 mb-4">
+                        <i class="fas fa-pills text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Farmácia e Apoio</h3>
+                    <p class="text-gray-700 mb-4">Farmácia hospitalar com medicamentos essenciais. Serviço de nutrição com dietas especiais para internados e ambulatórios.</p>
+                    <div class="bg-blue-100 text-blue-900 px-3 py-1 rounded-full text-sm inline-block">Suporte Completo</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flow Section -->
+    <section id="fluxo" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">Fluxo de Atendimento</h2>
+            
+            <div class="bg-blue-50 p-8 rounded-lg shadow-lg">
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-8 text-center">
+                    <!-- Step 1 -->
+                    <div class="flow-step">
+                        <div class="bg-blue-900 text-white rounded-full h-16 w-16 flex items-center justify-center mx-auto mb-4 text-2xl">
+                            1
+                        </div>
+                        <h3 class="font-semibold mb-2">Entrada</h3>
+                        <p class="text-sm text-gray-700">SAMU, UPA, Encaminhamento ou Pronto Atendimento</p>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="flow-step">
+                        <div class="bg-blue-900 text-white rounded-full h-16 w-16 flex items-center justify-center mx-auto mb-4 text-2xl">
+                            2
+                        </div>
+                        <h3 class="font-semibold mb-2">Acolhimento</h3>
+                        <p class="text-sm text-gray-700">Triagem e Classificação de Risco (Manchester)</p>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="flow-step">
+                        <div class="bg-blue-900 text-white rounded-full h-16 w-16 flex items-center justify-center mx-auto mb-4 text-2xl">
+                            3
+                        </div>
+                        <h3 class="font-semibold mb-2">Avaliação Médica</h3>
+                        <p class="text-sm text-gray-700">Consulta com médico generalista ou especialista</p>
+                    </div>
+                    
+                    <!-- Step 4 -->
+                    <div class="flow-step">
+                        <div class="bg-blue-900 text-white rounded-full h-16 w-16 flex items-center justify-center mx-auto mb-4 text-2xl">
+                            4
+                        </div>
+                        <h3 class="font-semibold mb-2">Exames/Procedimentos</h3>
+                        <p class="text-sm text-gray-700">Laboratório, Imagem, Medicação ou Pequenas Cirurgias</p>
+                    </div>
+                    
+                    <!-- Step 5 -->
+                    <div class="flow-step">
+                        <div class="bg-blue-900 text-white rounded-full h-16 w-16 flex items-center justify-center mx-auto mb-4 text-2xl">
+                            5
+                        </div>
+                        <h3 class="font-semibold mb-2">Destino</h3>
+                        <p class="text-sm text-gray-700">Alta, Observação, Internação ou Transferência</p>
+                    </div>
+                </div>
+                
+                <div class="mt-12 bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-blue-900 mb-4">Diferenciais do Nosso Atendimento:</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <p>Protocolos baseados em evidências científicas</p>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <p>Humanização em todos os pontos de contato</p>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <p>Regulação integrada com atenção primária</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contato" class="py-16 bg-blue-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">Entre em Contato</h2>
+            
+            <div class="flex flex-col lg:flex-row gap-8">
+                <!-- Contact Info -->
+                <div class="lg:w-1/3 bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold text-blue-900 mb-6">Informações de Contato</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-phone-alt text-blue-900 mt-1 mr-4"></i>
+                            <div>
+                                <p class="font-semibold">Telefone:</p>
+                                <p>(38) 3841-1014 (Central de Atendimento)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-clock text-blue-900 mt-1 mr-4"></i>
+                            <div>
+                                <p class="font-semibold">Horário de Visitas:</p>
+                                <p>Domingo a Segunda - 13h às 15h</p>
+                                <p class="font-semibold">Visitas UTI:</p>
+                                <p>15h às 16h (restrito a 2 familiares por dia)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marked-alt text-blue-900 mt-1 mr-4"></i>
+                            <div>
+                                <p class="font-semibold">Localização:</p>
+                                <p>Avenida Antônio Carlos, nº 1009</p>
+                                <p>Bairro São Geraldo, Salinas - MG</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="font-semibold mb-3">Redes Sociais</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-blue-900 text-white p-2 rounded-full w-10 h-10 flex items-center justify-center hover:bg-blue-700">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="bg-blue-900 text-white p-2 rounded-full w-10 h-10 flex items-center justify-center hover:bg-blue-700">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="bg-blue-900 text-white p-2 rounded-full w-10 h-10 flex items-center justify-center hover:bg-blue-700">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="lg:w-2/3 bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold text-blue-900 mb-6">Envie sua Mensagem</h3>
+                    
+                    <form class="space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nome Completo</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">E-mail</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Assunto</label>
+                            <select id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900">
+                                <option value="">Selecione um assunto</option>
+                                <option value="visit">Horário de Visitas</option>
+                                <option value="information">Informações</option>
+                                <option value="compliment">Elogio</option>
+                                <option value="complaint">Reclamação</option>
+                                <option value="suggestion">Sugestão</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Mensagem</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="bg-blue-900 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition duration-300">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <div class="mb-4 md:mb-0">
+                    <p class="text-xl font-bold">Hospital Municipal Dr. Oswaldo Prediliano Santana</p>
+                    <p class="text-blue-200">Referência em Saúde Pública para a Região</p>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div>
+                        <h4 class="font-semibold mb-2">Serviços</h4>
+                        <ul class="space-y-1 text-sm text-blue-200">
+                            <li><a href="#" class="hover:text-white">Pronto Atendimento</a></li>
+                            <li><a href="#" class="hover:text-white">Maternidade</a></li>
+                            <li><a href="#" class="hover:text-white">Exames</a></li>
+                            <li><a href="#" class="hover:text-white">Farmácia</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold mb-2">Institucional</h4>
+                        <ul class="space-y-1 text-sm text-blue-200">
+                            <li><a href="#" class="hover:text-white">História</a></li>
+                            <li><a href="#" class="hover:text-white">Diretoria</a></li>
+                            <li><a href="#" class="hover:text-white">Trabalhe Conosco</a></li>
+                            <li><a href="#" class="hover:text-white">Ouvidoria</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold mb-2">Links Úteis</h4>
+                        <ul class="space-y-1 text-sm text-blue-200">
+                            <li><a href="#" class="hover:text-white">Portal SUS</a></li>
+                            <li><a href="#" class="hover:text-white">Prefeitura</a></li>
+                            <li><a href="#" class="hover:text-white">Protocolos</a></li>
+                            <li><a href="#" class="hover:text-white">Normas</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold mb-2">Acesso Rápido</h4>
+                        <ul class="space-y-1 text-sm text-blue-200">
+                            <li><a href="#" class="hover:text-white">Agendamentos</a></li>
+                            <li><a href="#" class="hover:text-white">Resultados</a></li>
+                            <li><a href="#" class="hover:text-white">Fale Conosco</a></li>
+                            <li><a href="#" class="hover:text-white">Mapa do Site</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-blue-800 pt-6">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="flex space-x-8 mb-4 md:mb-0">
+                        <img src="https://via.placeholder.com/80x50?text=PREFEITURA" alt="Prefeitura" class="h-10">
+                        <img src="https://via.placeholder.com/80x50?text=SUS" alt="SUS" class="h-10">
+                        <img src="https://via.placeholder.com/80x50?text=MG" alt="Minas Gerais" class="h-10">
+                    </div>
+                    
+                    <div class="text-sm text-blue-200 text-center md:text-right">
+                        <p>© 2023 Hospital Municipal Dr. Oswaldo Prediliano Santana. Todos os direitos reservados.</p>
+                        <p>Desenvolvido pela Secretaria Municipal de Saúde de Salinas - MG</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 bg-blue-900 text-white p-3 rounded-full shadow-lg hidden">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Back to Top Button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
